@@ -54,7 +54,6 @@ print(" Bruteforce Wordlist Generator")
 print("------------------------------\n")
 
 
-# Get inputs from users
 victim_name = str(input("[+] Enter Victim's Name : ")).lower()
 if victim_name != "":
     add_converts.to_lower(victim_name)   #details.append(victim_name)
@@ -63,13 +62,13 @@ if victim_name != "":
     add_converts.convert_a(victim_name)
     add_converts.convert_s(victim_name)
     add_converts.convert_as(victim_name)
-    # add_ends.ends_numbers()
+    add_ends.ends_numbers()
 
-victim_DOB = str(input("[+] Enter Victim's Birth year : "))
+victim_DOB = str(input("\n[+] Enter Victim's Birth year : "))
 if victim_DOB != "":
     add.add_to_list(victim_DOB);
 
-victim_fav_person = str(input("[+] Enter Victim's Fav Person Name : "))
+victim_fav_person = str(input("\n[+] Enter Victim's Fav Person Name : "))
 if victim_fav_person != "":
     add_converts.to_lower(victim_fav_person)   #details.append(victim_name)
     add_converts.to_upper(victim_fav_person)
@@ -77,13 +76,12 @@ if victim_fav_person != "":
     add_converts.convert_a(victim_fav_person)
     add_converts.convert_s(victim_fav_person)
     add_converts.convert_as(victim_fav_person)
-    # add_ends.ends_numbers()
 
-victim_fav_person_dob = str(input("[+] Enter Victim's Fav Person Birth year : "))
+victim_fav_person_dob = str(input("\n[+] Enter Victim's Fav Person Birth year : "))
 if victim_fav_person_dob != "":
     add.add_to_list(victim_fav_person_dob)
 
-victim_phone_number = str(input("[+] Enter Victim's Phone Number : "))
+victim_phone_number = str(input("\n[+] Enter Victim's Phone Number : "))
 if victim_phone_number != "":
     add.add_to_list(victim_fav_person_dob)
     add.add_to_list(victim_phone_number[:6])
@@ -91,43 +89,21 @@ if victim_phone_number != "":
     add.add_to_list(victim_phone_number[-3:-1])
     add.add_to_list(victim_phone_number[-4:-1])
 
-# print(details)
-
 line_1 = [] # Creating a empty list for storaging data
 line_2 = [] # Creating a empty list for storaging data
-# line_3 = [] # Creating a empty list for storaging data
 
 for i in range(len(details)):
     line_1.append(details[i])   # Adding the data in line_1
 
-    # line_1.append(details[i].capitalize())
     for j in range(len(details)):
         line_2.append(details[i] + details[j])  # Adding the data in line_2
-        # for k in range(len(details)):
-        #     line_3.append(details[i] + details[j] + details[k]) # Adding the data in line_3
 
-
-file = open('list3.txt', 'w')    # to save in file 
-
-# print("---line 1---")
+file = open('list.txt', 'w')    # to save in file 
 for i in line_1:
-    # print(i)
     file.write(i + "\n")    # adding the words in file
-# print(line_1)
-
-# print("---line 2---")
 for i in line_2:
-    # print(i)
     file.write(i + "\n")    # adding the words in file
-# print(line_2)
-
-# print("---line 3---")
-# for i in line_3:
-#     # print(i)
-#     file.write(i + "\n")    # adding the words in file
-
 file.close()
 
+print("")
 print(len(line_1) + len(line_2), "lines are generated")
-
-# print(line_3)
